@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Şaka Sertifikası</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        font-family: 'Georgia', serif;
+        background: #f4f1ea;
+    }
+
+    .sertifika {
+        position: relative;
+        width: 90%;
+        max-width: 1000px;
+        height: 600px;
+        border: 15px solid gold;
+        padding: 50px;
+        box-shadow: 0 0 30px rgba(0,0,0,0.3);
+        box-sizing: border-box;
+        background: url('https://cdn.pixabay.com/photo/2016/11/29/10/07/beer-1869727_1280.jpg') no-repeat center center;
+        background-size: cover;
+        color: white;
+        overflow: hidden;
+    }
+
+    /* Yarı saydam overlay */
+    .sertifika::after {
+        content: "";
+        position: absolute;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.4);
+        z-index: 0;
+    }
+
+    /* Yazılar overlay üzerine çıkacak */
+    .sertifika > * {
+        position: relative;
+        z-index: 1;
+        text-shadow: 2px 2px 8px black;
+    }
+
+    h1 {
+        font-size: 50px;
+        margin-bottom: 20px;
+    }
+    .isim {
+        font-size: 40px;
+        margin: 30px 0;
+        font-weight: bold;
+    }
+    p, h2 {
+        font-size: 24px;
+        margin: 15px 0;
+    }
+    .alt {
+        margin-top: 30px;
+        font-size: 22px;
+    }
+
+    /* Mühür efekti */
+    .muhur {
+        position: absolute;
+        bottom: 30px;
+        right: 30px;
+        width: 150px;
+        height: 150px;
+        border: 8px solid red;
+        border-radius: 50%;
+        color: red;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transform: rotate(-15deg);
+        font-size: 24px;
+        opacity: 0.95;
+        flex-direction: column;
+        background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.3), rgba(255,255,255,0));
+        box-shadow: 0 0 20px red, 0 0 40px rgba(255,0,0,0.3), inset 0 0 10px rgba(255,255,255,0.5);
+        animation: sallan 2s infinite alternate, parlat 1.5s infinite alternate;
+    }
+
+    /* Mühür içindeki emoji animasyonu */
+    .muhur span {
+        font-size: 40px;
+        margin-bottom: 5px;
+        display: inline-block;
+        animation: yukariAsagi 1s infinite alternate ease-in-out;
+    }
+
+    /* Sallanma animasyonu */
+    @keyframes sallan {
+        0% { transform: rotate(-15deg); }
+        50% { transform: rotate(-10deg); }
+        100% { transform: rotate(-20deg); }
+    }
+
+    /* Parlama animasyonu */
+    @keyframes parlat {
+        0% { box-shadow: 0 0 20px red, 0 0 40px rgba(255,0,0,0.3); }
+        50% { box-shadow: 0 0 30px red, 0 0 60px rgba(255,0,0,0.5); }
+        100% { box-shadow: 0 0 20px red, 0 0 40px rgba(255,0,0,0.3); }
+    }
+
+    /* Emoji yukarı-aşağı hareketi */
+    @keyframes yukariAsagi {
+        0% { transform: translateY(0px); }
+        100% { transform: translateY(-15px); }
+    }
+</style>
+</head>
+<body>
+
+<div class="sertifika">
+    <h1>🏆 RESMİ BELGE 🏆</h1>
+    <p>Bu belge aşağıdaki kişiye verilmiştir:</p>
+
+    <div class="isim">Nazlı Cavdar</div>
+
+    <p>Gece aktivitelerinde gösterdiği "efsanevi performans" nedeniyle</p>
+
+    <h2>🍻 ALKOLİK SERTİFİKASI 🍻</h2>
+
+    <p class="alt">Tarih: 31 Mart 2026</p>
+    <p class="alt">Onaylayan: Nisa Gezer</p>
+
+    <div class="muhur">
+        <span>🍺</span>
+        ONAYLI
+    </div>
+</div>
+
+</body>
+</html>
